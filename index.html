@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header><svg id="banner" viewBox="-200 -400 400 800">
+  <header><svg id="banner" viewBox="-200 -400 400 800" style="display: none">
     <defs>
       <radialGradient id="banner-background-gradient">
         <stop offset="0" stop-color="#101012" />
@@ -114,5 +114,8 @@
       ZERO TO INFINITY
     </text>
   </svg></header>
+  <script>
+    window.addEventListener('load', () => { document.getElementById('banner').style.display = 'block'; });
+  </script>
 </body>
 </html>
