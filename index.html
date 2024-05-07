@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
-  <header><svg id="banner" viewBox="-200 -400 400 800" style="display: none">
+  <!-- InfiniteLimits Logo 5.4 -- Daniel Li, Mar 13 2024 -->
+  <header><svg id="banner" viewBox="-400 -400 800 800">
     <defs>
       <radialGradient id="banner-background-gradient">
         <stop offset="0" stop-color="#101012" />
@@ -27,69 +27,60 @@
 
     <rect x="-400" y="-400" width="800" height="800" fill="url(#banner-background-gradient)" />
 
-    <circle
-      class="banner-circle"
-      r="300"
-      fill="none"
-      stroke="rgb(96,96,108)"
-      stroke-width="2"
-      stroke-dasharray="0.09 0.01"
-      pathLength="1"
-      style="--period: 20s"/>
-    <circle
-      class="banner-circle"
-      r="320"
-      fill="none"
-      stroke="rgb(72,72,84)"
-      stroke-width="2"
-      stroke-dasharray="0.14 0.01"
-      stroke-dashoffset="0.05"
-      pathLength="1"
-      style="--period: 40s" />
-    <circle
-      class="banner-circle"
-      r="340"
-      fill="none"
-      stroke="rgb(48,48,56)"
-      stroke-width="2"
-      stroke-dasharray="0.19 0.01"
-      pathLength="1"
-      style="--period: 60s" />
+    <g class="banner-circle" style="--period: 20s">
+      <circle
+        r="300"
+        fill="none"
+        stroke="rgb(96,96,108)"
+        stroke-width="2"
+        stroke-dasharray="0.09 0.01"
+        pathLength="1" />
+    </g>
+    <g class="banner-circle" style="--period: 40s">
+      <circle
+        r="320"
+        fill="none"
+        stroke="rgb(72,72,84)"
+        stroke-width="2"
+        stroke-dasharray="0.14 0.01"
+        stroke-dashoffset="0.05"
+        pathLength="1" />
+    </g>
+    <g class="banner-circle" style="--period: 60s">
+      <circle
+        r="340"
+        fill="none"
+        stroke="rgb(48,48,56)"
+        stroke-width="2"
+        stroke-dasharray="0.19 0.01"
+        pathLength="1" />
+    </g>
 
-    <!-- InfiniteLimits Logo 5.4 -- Daniel Li, Mar 13 2024 -->
     <g id="banner-logo">
-      <g id="banner-left-shade-container"><path
-        id="banner-left-shade"
+      <g id="banner-left-shade-container"><g id="banner-left-shade"><path
         fill="#998700"
-        d="M -100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8 Z" /></g>
-      <g clip-path="url(#banner-left-clip)"><path
-         id="banner-left-angle"
-        fill="#ffe000"
-        d="M -100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8 Z" /></g>
-      <g id="banner-right-shade-container"><path
-        id="banner-right-shade"
+        d="M -100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8 Z" /></g></g>
+      <g id="banner-right-shade-container"><g id="banner-right-shade"><path
         fill="#994800"
-        d="M 100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8 Z" /></g>
-      <g clip-path="url(#banner-right-clip)"><path
-        id="banner-right-angle"
-        fill="#ff7800"
-        d="M 100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8 Z" /></g>
-      <path
-        id="banner-top-left"
+        d="M 100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8 Z" /></g></g>
+      <g clip-path="url(#banner-left-clip)"><g id="banner-left-angle"><path
         fill="#ffe000"
-        d="M -10,-110 -80,-110 -80,-28.8 -10,-56.8 Z" />
-      <path
-        id="banner-bottom-left"
+        d="M -100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8 Z" /></g></g>
+      <g clip-path="url(#banner-right-clip)"><g id="banner-right-angle"><path
+        fill="#ff7800"
+        d="M 100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8 Z" /></g></g>
+      <g id="banner-top-left"><path
         fill="#ffe000"
-        d="M -10,-36.8 -80,-8.8 -80,124.8 -10,96.8 Z" />
-      <path
-        id="banner-top-right"
+        d="M -10,-110 -80,-110 -80,-28.8 -10,-56.8 Z" /></g>
+      <g id="banner-bottom-left"><path
+        fill="#ffe000"
+        d="M -10,-36.8 -80,-8.8 -80,124.8 -10,96.8 Z" /></g>
+      <g id="banner-top-right"><path
         fill="#ff7800"
-        d="M 10,36.8 80,8.8 80,-124.8 10,-96.8 Z" />
-      <path
-        id="banner-bottom-right"
+        d="M 10,36.8 80,8.8 80,-124.8 10,-96.8 Z" /></g>
+      <g id="banner-bottom-right"><path
         fill="#ff7800"
-        d="M 10,110 80,110 80,28.8 10,56.8 Z" />
+        d="M 10,110 80,110 80,28.8 10,56.8 Z" /></g>
     </g>
 
     <text
@@ -114,8 +105,5 @@
       ZERO TO INFINITY
     </text>
   </svg></header>
-  <script>
-    window.addEventListener('load', () => { document.getElementById('banner').style.display = 'block'; });
-  </script>
 </body>
 </html>

@@ -19,14 +19,10 @@ body {
 }
 
 header {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   height: 100%;
-}
-
-#banner {
-  width: 100%;
-  height: 100%;
-  font-family: 'Work Sans', sans-serif;
 }
 
 @keyframes banner-circle-appear {
@@ -39,8 +35,16 @@ header {
   to { transform: rotate(360deg); }
 }
 
+#banner {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Work Sans', sans-serif;
+}
+
 .banner-circle {
-  animation: 2s linear var(--global-delay) backwards banner-circle-appear,
+  animation: 2s linear var(--global-delay) both banner-circle-appear,
              var(--period) linear infinite banner-circle-spin;
 }
 
@@ -62,14 +66,9 @@ header {
   animation: 1s var(--ease-out-cubic) calc(var(--global-delay) + 0.25s) both banner-left-shade;
 }
 
-@keyframes banner-left-angle {
-  from { transform: translate(50px, -20px); }
-  to { transform: none; }
-}
-
-#banner-left-shade-container,
-#banner-left-angle {
-  animation: 1s var(--ease-out-cubic) var(--global-delay) both banner-left-angle;
+@keyframes transform {
+  from { transform: var(--transform-from); }
+  to { transform: var(--transform-to); }
 }
 
 @keyframes banner-right-shade {
@@ -81,14 +80,18 @@ header {
   animation: 1s var(--ease-out-cubic) calc(var(--global-delay) + 0.25s) both banner-right-shade;
 }
 
-@keyframes banner-right-angle {
-  from { transform: translate(-50px, 20px); }
-  to { transform: none; }
+#banner-left-shade-container,
+#banner-left-angle {
+  --transform-from: translate(50px, -20px);
+  --transform-to: none;
+  animation: 1s var(--ease-out-cubic) var(--global-delay) both transform;
 }
 
 #banner-right-shade-container,
 #banner-right-angle {
-  animation: 1s var(--ease-out-cubic) var(--global-delay) both banner-right-angle;
+  --transform-from: translate(-50px, 20px);
+  --transform-to: none;
+  animation: 1s var(--ease-out-cubic) var(--global-delay) both transform;
 }
 
 @keyframes banner-left {
